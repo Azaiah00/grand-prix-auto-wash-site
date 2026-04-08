@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hero shimmer — your gradient + keyframes; scoped to #root so `text-white` on the shell does not override the fill. */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+#root .shimmer-text {
+  display: inline-block;
+  background: linear-gradient(90deg, #c0c0c0 0%, #ffffff 25%, #c0c0c0 50%, #ffffff 75%, #c0c0c0 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .shimmer-text {
+    animation: none;
+  }
+}
