@@ -53,7 +53,7 @@ export default function GrandPrixPackages() {
                   <div className="mb-6">
                     <span className="text-4xl md:text-5xl font-bold text-white">{pkg.price}</span>
                   </div>
-                  <ul className="space-y-3 flex-1 mb-6">
+                  <ul className="space-y-3 flex-1">
                     {pkg.features.map((feat) => (
                       <li key={feat} className="flex items-start gap-3 text-sm text-gray-300">
                         <Check size={16} className="mt-0.5 flex-shrink-0" style={{ color: pkg.color }} />
@@ -61,20 +61,6 @@ export default function GrandPrixPackages() {
                       </li>
                     ))}
                   </ul>
-                  <button
-                    type="button"
-                    className="w-full py-3.5 rounded-xl text-sm font-semibold uppercase tracking-wider transition-all duration-300 hover:scale-[1.02]"
-                    style={{
-                      background: pkg.featured
-                        ? `linear-gradient(135deg, ${pkg.color}, #D97706)`
-                        : "rgba(255,255,255,0.06)",
-                      border: pkg.featured ? "none" : "1px solid rgba(255,255,255,0.1)",
-                      color: pkg.featured ? "#000" : "#fff",
-                      boxShadow: pkg.featured ? `0 0 25px ${pkg.color}44` : "none",
-                    }}
-                  >
-                    {pkg.featured ? "Get the Champion" : "Select Package"}
-                  </button>
                 </div>
               </GlowCard>
             </AnimateIn>
