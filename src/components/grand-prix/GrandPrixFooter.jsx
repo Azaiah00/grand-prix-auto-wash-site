@@ -1,17 +1,29 @@
+import { Facebook, Mail, Phone } from "lucide-react";
 import GrandPrixLogo from "./GrandPrixLogo.jsx";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE_DISPLAY,
+  FACEBOOK_URL,
+  getMailtoHref,
+  getPhoneTelHref,
+} from "./siteConfig.js";
 
 const FOOTER_LINKS = [
   ["Features", "features"],
   ["Wash Packages", "packages"],
   ["Reviews", "reviews"],
   ["Locations", "locations"],
+  ["Contact", "contact"],
 ];
 
 export default function GrandPrixFooter({ scrollTo }) {
+  const phoneHref = getPhoneTelHref();
+  const mailHref = getMailtoHref("Grand Prix Auto Wash inquiry");
+
   return (
     <footer className="relative border-t border-white/5 py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-10">
           <div>
             <GrandPrixLogo className="h-14 w-auto object-contain mb-3" />
             <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
@@ -47,9 +59,38 @@ export default function GrandPrixFooter({ scrollTo }) {
               <p>
                 9444 Atlee Commerce Blvd
                 <br />
-                Mechanicsville, VA
+                Mechanicsville, VA 23116
               </p>
               <p className="text-green-500 font-medium">Open 24/7/365</p>
+            </div>
+          </div>
+
+          <div id="contact">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Contact</h4>
+            <div className="space-y-3 text-sm">
+              <a
+                href={phoneHref}
+                className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+              >
+                <Phone size={16} className="text-gray-500 flex-shrink-0" aria-hidden />
+                {CONTACT_PHONE_DISPLAY}
+              </a>
+              <a
+                href={mailHref}
+                className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors break-all"
+              >
+                <Mail size={16} className="text-gray-500 flex-shrink-0 mt-0.5" aria-hidden />
+                {CONTACT_EMAIL}
+              </a>
+              <a
+                href={FACEBOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+              >
+                <Facebook size={16} className="text-gray-500 flex-shrink-0" aria-hidden />
+                Facebook
+              </a>
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ const LINKS = [
   ["Packages", "packages"],
   ["Reviews", "reviews"],
   ["Locations", "locations"],
+  ["Contact", "contact"],
 ];
 
 export default function GrandPrixNav({ mobileMenuOpen, setMobileMenuOpen, scrollTo }) {

@@ -108,8 +108,8 @@ export const locations = [
   {
     track: "Track 2",
     name: "Atlee Commerce Blvd",
-    address: "9444 Atlee Commerce Blvd, Mechanicsville, VA",
-    mapUrl: "https://www.google.com/maps?q=9444+Atlee+Commerce+Blvd+Mechanicsville+VA",
+    address: "9444 Atlee Commerce Blvd, Mechanicsville, VA 23116",
+    mapUrl: "https://www.google.com/maps?q=9444+Atlee+Commerce+Blvd+Mechanicsville+VA+23116",
     color: "#10B981",
   },
 ];

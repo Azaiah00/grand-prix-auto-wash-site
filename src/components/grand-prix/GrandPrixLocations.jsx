@@ -1,7 +1,7 @@
 import { MapPin, Phone } from "lucide-react";
 import { AnimateIn, CheckeredBG, GlowCard } from "./GrandPrixPrimitives.jsx";
 import { locations } from "./contentData.js";
-import { getPhoneTelHref } from "./siteConfig.js";
+import { CONTACT_PHONE_DISPLAY, getPhoneTelHref } from "./siteConfig.js";
 
 /** Google Maps embed without an API key (query + output=embed). */
 function embedSrc(address) {
@@ -86,31 +86,17 @@ export default function GrandPrixLocations() {
                       <MapPin size={16} aria-hidden />
                       Get Directions
                     </a>
-                    {phoneHref ? (
-                      <a
-                        href={phoneHref}
-                        className="flex-1 py-3 rounded-xl text-sm font-semibold uppercase tracking-wider text-center transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2"
-                        style={{
-                          background: "rgba(255,255,255,0.06)",
-                          border: "1px solid rgba(255,255,255,0.1)",
-                        }}
-                      >
-                        <Phone size={16} aria-hidden />
-                        Call Us
-                      </a>
-                    ) : (
-                      <span
-                        className="flex-1 py-3 rounded-xl text-sm font-semibold uppercase tracking-wider text-center flex items-center justify-center gap-2 text-gray-500"
-                        style={{
-                          background: "rgba(255,255,255,0.03)",
-                          border: "1px solid rgba(255,255,255,0.06)",
-                        }}
-                        title="Set VITE_BUSINESS_PHONE or VITE_TEL_HREF in .env"
-                      >
-                        <Phone size={16} aria-hidden />
-                        Add phone in .env
-                      </span>
-                    )}
+                    <a
+                      href={phoneHref}
+                      className="flex-1 py-3 rounded-xl text-sm font-semibold uppercase tracking-wider text-center transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2"
+                      style={{
+                        background: "rgba(255,255,255,0.06)",
+                        border: "1px solid rgba(255,255,255,0.1)",
+                      }}
+                    >
+                      <Phone size={16} aria-hidden />
+                      {CONTACT_PHONE_DISPLAY}
+                    </a>
                   </div>
                 </div>
               </GlowCard>
