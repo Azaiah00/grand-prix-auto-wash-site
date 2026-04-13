@@ -325,11 +325,11 @@ export default function OwnerReviewsPitch() {
               Our 5-Pillar Approach
             </h1>
             {[
-              ["PILLAR 1", "Review Response Engine", "Respond to every review within 24 hours, building loyalty and trust."],
-              ["PILLAR 2", "Review Generation System", "Strategic system to capture happy customers in the moment."],
-              ["PILLAR 3", "Google Business Profile Optimization", "Photos, posts, Q&A, attributes — maximum visibility."],
-              ["PILLAR 4", "Professional Website & SEO", "Fast, mobile-friendly, built to convert and rank."],
-              ["PILLAR 5", "Reputation Monitoring & Reporting", "Weekly reports, competitor tracking, sentiment analysis."],
+              ["PILLAR 1", "Review Response Engine", "Respond to every review within 24 hours, building customer loyalty and trust."],
+              ["PILLAR 2", "Review Generation System", "Strategic, proactive system to capture happy customers in the moment."],
+              ["PILLAR 3", "Google Business Profile Optimization", "Photos, posts, Q&A, attributes — everything optimized for maximum visibility."],
+              ["PILLAR 4", "Professional Website & SEO", "Built for search engines and customers: fast, mobile-friendly, converting."],
+              ["PILLAR 5", "Reputation Monitoring & Reporting", "Weekly reports, competitor tracking, sentiment analysis — you see everything."],
             ].map(([num, t, d]) => (
               <div
                 key={num}
@@ -365,11 +365,21 @@ export default function OwnerReviewsPitch() {
                   Day-one setup
                 </div>
                 <div className="flex flex-col gap-2.5">
+                  {/* Highlighted quick win from the sales deck — backlog responses signal care immediately */}
+                  <div
+                    className="rounded-lg border border-amber-300 bg-amber-50/95 p-3 text-left shadow-sm"
+                    style={{ borderLeftWidth: "3px", borderLeftColor: ACCENT }}
+                  >
+                    <p className="text-[11px] font-bold uppercase tracking-wide text-amber-900/90">Quick win</p>
+                    <p className="mt-1 text-sm font-semibold leading-snug text-slate-900">
+                      Respond to all 277 existing reviews in the first 2 weeks
+                    </p>
+                  </div>
                   <CheckRow>Google Business Profile audit &amp; optimization (both locations)</CheckRow>
                   <CheckRow>Review response templates &amp; brand voice guide</CheckRow>
-                  <CheckRow>Custom review generation strategy</CheckRow>
+                  <CheckRow>Custom review generation strategy for car wash customers</CheckRow>
                   <CheckRow>Competitor analysis &amp; benchmarking report</CheckRow>
-                  <CheckRow>Reputation baseline + sentiment analysis</CheckRow>
+                  <CheckRow>Reputation baseline report with sentiment analysis</CheckRow>
                 </div>
               </div>
               <div
@@ -383,11 +393,11 @@ export default function OwnerReviewsPitch() {
                   Website &amp; SEO
                 </div>
                 <div className="flex flex-col gap-2.5">
-                  <CheckRow>Professional website — mobile-responsive &amp; fast</CheckRow>
-                  <CheckRow>SEO foundation: keywords, meta tags, schema</CheckRow>
+                  <CheckRow>Professional website for both locations — mobile-responsive &amp; fast</CheckRow>
+                  <CheckRow>SEO foundation: keyword research, meta tags, schema markup</CheckRow>
                   <CheckRow>Google Analytics &amp; Search Console</CheckRow>
-                  <CheckRow>Review widgets embedded</CheckRow>
-                  <CheckRow>Hosting &amp; maintenance ongoing</CheckRow>
+                  <CheckRow>Review widgets embedded to showcase your best reviews</CheckRow>
+                  <CheckRow>Hosting &amp; maintenance included ongoing</CheckRow>
                 </div>
               </div>
               <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -398,11 +408,11 @@ export default function OwnerReviewsPitch() {
                   Ongoing monthly
                 </div>
                 <div className="flex flex-col gap-2.5">
-                  <CheckRow>Every Google review responded within 24 hours</CheckRow>
+                  <CheckRow>Every Google review responded to within 24 hours</CheckRow>
                   <CheckRow>Weekly GBP posts &amp; photos</CheckRow>
                   <CheckRow>Monthly website content for SEO</CheckRow>
-                  <CheckRow>Weekly reputation reports</CheckRow>
-                  <CheckRow>Monthly strategy call</CheckRow>
+                  <CheckRow>Weekly reputation reports with insights</CheckRow>
+                  <CheckRow>Monthly strategy call with you</CheckRow>
                   <CheckRow>Competitor monitoring &amp; review generation</CheckRow>
                 </div>
               </div>
@@ -418,10 +428,16 @@ export default function OwnerReviewsPitch() {
               90-Day Roadmap
             </h1>
             {[
-              ["PHASE 1: Foundation (Weeks 1–2)", "Website build + GBP optimization. Audit and build the platform."],
-              ["PHASE 2: Growth (Weeks 3–6)", "Review response engine + generation ramps up."],
-              ["PHASE 3: Scale (Weeks 7–10)", "Full system at speed. Rankings and reviews accelerate."],
-              ["PHASE 4: Optimize (Weeks 11–12)", "Refine from data. Baseline + progress metrics."],
+              [
+                "PHASE 1: Foundation + Quick Win (Weeks 1–2)",
+                "We respond to all 277 existing reviews across both locations — an immediate, visible signal to every future customer that you care. Simultaneously: website build kickoff and GBP optimization.",
+              ],
+              [
+                "PHASE 2: Growth (Weeks 3–6)",
+                "Review response engine activates + generation ramps up. We keep responding to every new review and capture more 5-stars in the moment.",
+              ],
+              ["PHASE 3: Scale (Weeks 7–10)", "Full system running at speed. Website ranks on Google, reviews flow in, competitors notice your improvement."],
+              ["PHASE 4: Optimize (Weeks 11–12)", "Refine based on data. We double down on what works. You leave with baseline + progress metrics."],
             ].map(([title, body]) => (
               <div
                 key={title}
@@ -550,16 +566,16 @@ export default function OwnerReviewsPitch() {
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               <Card title="Revenue impact">
                 <p className="text-sm text-slate-600">
-                  Research often cited: each{" "}
-                  <strong style={{ color: ACCENT }}>1-star increase can mean ~5–9% revenue lift</strong>.
-                  For $30–50K/month, even a 0.3-star bump can mean{" "}
+                  Harvard Business School research (commonly cited for star ratings): each{" "}
+                  <strong style={{ color: ACCENT }}>1-star increase ≈ 5–9% revenue growth</strong>. For
+                  a car wash doing $30–50K/month, even a 0.3-star bump can mean{" "}
                   <strong style={{ color: ACCENT }}>$1,500–4,500 more per month</strong>.
                 </p>
               </Card>
               <Card title="Break-even">
                 <p className="text-sm text-slate-600">
-                  Just <strong style={{ color: ACCENT }}>2–3 extra washes per day</strong> can pay for the 6-month
-                  program. Better ratings + a website = more customers finding you daily.
+                  Just <strong style={{ color: ACCENT }}>2–3 extra car washes per day</strong> pays for the entire
+                  6-month program. Better ratings + a website = more customers finding you every single day.
                 </p>
               </Card>
             </div>
@@ -574,7 +590,7 @@ export default function OwnerReviewsPitch() {
               <h1 className="racing-font mb-10 text-3xl md:text-5xl" style={{ color: ACCENT }}>
                 Let&apos;s Get Started
               </h1>
-              <p className="text-lg text-slate-600">Schedule a kickoff call to begin your transformation</p>
+              <p className="text-lg text-slate-600">Call to begin your transformation</p>
               <p className="mt-8 text-xl font-semibold text-slate-800">Frederick Sales</p>
               <p className="mt-1 text-lg font-semibold text-slate-800">Azaiah Wood</p>
               <p className="mt-4 text-lg" style={{ color: ACCENT }}>
@@ -583,8 +599,8 @@ export default function OwnerReviewsPitch() {
                 </a>
               </p>
               <div className="mt-4 flex flex-col items-center gap-2 text-lg" style={{ color: ACCENT }}>
-                <a href="tel:+18048879435" className="underline-offset-2 hover:underline">
-                  (804) 887-9435
+                <a href="tel:+17033994394" className="underline-offset-2 hover:underline">
+                  703-399-4394
                 </a>
                 <a href="tel:+18043805490" className="underline-offset-2 hover:underline">
                   804-380-5490
