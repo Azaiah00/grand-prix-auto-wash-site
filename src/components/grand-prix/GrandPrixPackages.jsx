@@ -12,10 +12,10 @@ export default function GrandPrixPackages() {
             <p className="uppercase tracking-[0.25em] text-xs font-semibold mb-4" style={{ color: "#F59E0B" }}>
               The Wash Menu
             </p>
-            <h2 className="racing-font text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
+            <h2 className="racing-font text-slate-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
               Choose Your <span style={{ color: "#F59E0B" }}>Lap.</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-base md:text-lg font-light">
+            <p className="text-slate-600 max-w-2xl mx-auto text-base md:text-lg font-light">
               From a quick rinse to a full ceramic shield treatment, every package delivers a touchless,
               swirl-free shine.
             </p>
@@ -44,18 +44,18 @@ export default function GrandPrixPackages() {
                       {pkg.tier}
                     </span>
                   </div>
-                  <h3 className="racing-font text-xl md:text-2xl text-white mb-2">{pkg.name}</h3>
+                  <h3 className="racing-font text-xl md:text-2xl text-slate-900 mb-2">{pkg.name}</h3>
                   {pkg.tagline && (
                     <p className="text-sm italic mb-3" style={{ color: "#F59E0B" }}>
                       &ldquo;{pkg.tagline}&rdquo;
                     </p>
                   )}
                   <div className="mb-6">
-                    <span className="text-4xl md:text-5xl font-bold text-white">{pkg.price}</span>
+                    <span className="text-4xl md:text-5xl font-bold text-slate-900">{pkg.price}</span>
                   </div>
                   <ul className="space-y-3 flex-1">
                     {pkg.features.map((feat) => (
-                      <li key={feat} className="flex items-start gap-3 text-sm text-gray-300">
+                      <li key={feat} className="flex items-start gap-3 text-sm text-slate-700">
                         <Check size={16} className="mt-0.5 flex-shrink-0" style={{ color: pkg.color }} />
                         {feat}
                       </li>

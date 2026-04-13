@@ -13,10 +13,10 @@ export default function GrandPrixFeatures() {
             <p className="uppercase tracking-[0.25em] text-xs font-semibold mb-4" style={{ color: "#10B981" }}>
               The Grand Prix Difference
             </p>
-            <h2 className="racing-font text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
+            <h2 className="racing-font text-slate-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
               Engineered for a <span style={{ color: "#DC2626" }}>Flawless Finish.</span>
             </h2>
-            <p className="text-gray-400 max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-light">
+            <p className="text-slate-600 max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-light">
               We don&apos;t just wash cars — we rejuvenate them. Our state-of-the-art touchless bays use
               laser-guided contouring and premium foaming agents to lift dirt without a single brush ever
               touching your clear coat.
@@ -41,8 +41,8 @@ export default function GrandPrixFeatures() {
                     >
                       <Icon size={26} style={{ color }} />
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-3">{f.title}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed flex-1">{f.desc}</p>
+                    <h3 className="text-lg font-semibold text-slate-900 mb-3">{f.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed flex-1">{f.desc}</p>
                   </div>
                 </GlowCard>
               </AnimateIn>

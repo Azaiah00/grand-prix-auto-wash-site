@@ -46,16 +46,21 @@ export function AnimateIn({ children, delay = 0, className = "", direction = "up
   );
 }
 
-/** Subtle racing checkered overlay. Unique pattern id per mount so multiple sections do not clash. */
+/**
+ * Subtle racing checkered overlay. Unique pattern id per mount so multiple sections do not clash.
+ * On a light page we use low-opacity slate tiles so the grid reads without looking heavy.
+ */
 export function CheckeredBG({ opacity = 0.03 }) {
   const pid = useId().replace(/:/g, "");
+  // Dark slate squares read on warm off-white; parent opacity still scales overall strength.
+  const tile = "rgb(15 23 42 / 0.07)";
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ opacity }}>
       <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
           <pattern id={`gp-checker-${pid}`} x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-            <rect x="0" y="0" width="20" height="20" fill="white" />
-            <rect x="20" y="20" width="20" height="20" fill="white" />
+            <rect x="0" y="0" width="20" height="20" fill={tile} />
+            <rect x="20" y="20" width="20" height="20" fill={tile} />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill={`url(#gp-checker-${pid})`} />
@@ -80,11 +85,15 @@ export function GlowCard({ children, color = "#DC2626", className = "", featured
       <div
         className="relative rounded-2xl overflow-hidden h-full"
         style={{
+          // Light “premium garage”: white cards; featured tier = warm amber wash + stronger amber ring.
           background: featured
-            ? "linear-gradient(135deg, rgba(20,20,25,0.97), rgba(30,20,15,0.97))"
-            : "linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))",
+            ? "linear-gradient(135deg, #fffbeb 0%, #ffedd5 55%, #fef3c7 100%)"
+            : "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
           backdropFilter: "blur(20px)",
-          border: featured ? "1px solid rgba(245,158,11,0.5)" : "1px solid rgba(255,255,255,0.08)",
+          boxShadow: featured
+            ? "0 12px 40px rgba(245, 158, 11, 0.12), inset 0 1px 0 rgba(255,255,255,0.9)"
+            : "0 8px 30px rgba(15, 23, 42, 0.06), inset 0 1px 0 rgba(255,255,255,0.95)",
+          border: featured ? "1px solid rgba(245, 158, 11, 0.45)" : "1px solid rgba(15, 23, 42, 0.1)",
         }}
       >
         {children}

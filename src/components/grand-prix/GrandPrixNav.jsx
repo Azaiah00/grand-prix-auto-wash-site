@@ -31,7 +31,7 @@ export default function GrandPrixNav({ mobileMenuOpen, setMobileMenuOpen, scroll
                 key={id}
                 type="button"
                 onClick={() => scrollTo(id)}
-                className="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase"
+                className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors tracking-wide uppercase"
               >
                 {label}
               </button>
@@ -39,7 +39,7 @@ export default function GrandPrixNav({ mobileMenuOpen, setMobileMenuOpen, scroll
             <button
               type="button"
               onClick={() => scrollTo("packages")}
-              className="px-5 py-2.5 rounded-lg text-sm font-semibold tracking-wide uppercase transition-all duration-300 hover:scale-105"
+              className="px-5 py-2.5 rounded-lg text-sm font-semibold tracking-wide uppercase text-white transition-all duration-300 hover:scale-105"
               style={{
                 background: "linear-gradient(135deg, #DC2626, #B91C1C)",
                 boxShadow: "0 0 20px rgba(220,38,38,0.3)",
@@ -51,7 +51,7 @@ export default function GrandPrixNav({ mobileMenuOpen, setMobileMenuOpen, scroll
 
           <button
             type="button"
-            className="md:hidden text-white"
+            className="md:hidden text-slate-800"
             aria-expanded={mobileMenuOpen}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -62,14 +62,14 @@ export default function GrandPrixNav({ mobileMenuOpen, setMobileMenuOpen, scroll
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-white/5 bg-[#0a0a0f]/95 backdrop-blur-xl">
+        <div className="md:hidden border-t border-slate-200/90 bg-white/95 backdrop-blur-xl shadow-sm">
           <div className="px-4 py-4 space-y-3">
             {LINKS.map(([label, id]) => (
               <button
                 key={id}
                 type="button"
                 onClick={() => scrollTo(id)}
-                className="block w-full text-left py-2 text-gray-300 hover:text-white text-lg"
+                className="block w-full text-left py-2 text-slate-700 hover:text-slate-900 text-lg"
               >
                 {label}
               </button>
@@ -77,7 +77,7 @@ export default function GrandPrixNav({ mobileMenuOpen, setMobileMenuOpen, scroll
             <button
               type="button"
               onClick={() => scrollTo("packages")}
-              className="w-full mt-2 px-5 py-3 rounded-lg text-sm font-semibold tracking-wide uppercase"
+              className="w-full mt-2 px-5 py-3 rounded-lg text-sm font-semibold tracking-wide uppercase text-white"
               style={{ background: "linear-gradient(135deg, #DC2626, #B91C1C)" }}
             >
               Get Washed

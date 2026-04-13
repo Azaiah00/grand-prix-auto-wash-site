@@ -9,7 +9,7 @@ export default function GrandPrixLogo({ className = "" }) {
 
   if (broken) {
     return (
-      <span className={`racing-font text-xl md:text-2xl text-white tracking-tight ${className}`} aria-hidden>
+      <span className={`racing-font text-xl md:text-2xl text-slate-900 tracking-tight ${className}`} aria-hidden>
         Grand Prix
       </span>
     );

@@ -22,12 +22,22 @@ const GLOBAL_STYLES = `
   .racing-font { font-family: 'Racing Sans One', cursive; }
 
   html { scroll-behavior: smooth; }
-  * { scrollbar-width: thin; scrollbar-color: #333 #0a0a0f; }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--gp-scrollbar-thumb) var(--gp-scrollbar-track);
+  }
+  *::-webkit-scrollbar { width: 8px; height: 8px; }
+  *::-webkit-scrollbar-track { background: var(--gp-scrollbar-track); }
+  *::-webkit-scrollbar-thumb {
+    background: var(--gp-scrollbar-thumb);
+    border-radius: 4px;
+  }
 
   .glass-nav {
-    background: rgba(10,10,15,0.8);
+    background: var(--gp-nav-bg);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--gp-nav-border);
   }
 `;
 
@@ -40,7 +50,10 @@ export default function GrandPrixAutoWash() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] text-white overflow-x-hidden" style={{ fontFamily: "'Outfit', sans-serif" }}>
+    <div
+      className="min-h-screen selection:bg-red-500/20 overflow-x-hidden"
+      style={{ fontFamily: "'Outfit', sans-serif", background: "var(--gp-page)", color: "var(--gp-text)" }}
+    >
       <style>{GLOBAL_STYLES}</style>
 
       <GrandPrixNav
@@ -90,16 +103,16 @@ export default function GrandPrixAutoWash() {
         <CheckeredBG opacity={0.03} />
         <div className="relative max-w-4xl mx-auto px-4 text-center">
           <AnimateIn>
-            <h2 className="racing-font text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
+            <h2 className="racing-font text-slate-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
               Ready for a <span style={{ color: "#DC2626" }}>Victory Lap?</span>
             </h2>
-            <p className="text-gray-400 text-base md:text-lg mb-8 max-w-2xl mx-auto font-light">
+            <p className="text-slate-600 text-base md:text-lg mb-8 max-w-2xl mx-auto font-light">
               Drive in any time — day or night. Your car deserves a podium finish.
             </p>
             <button
               type="button"
               onClick={() => scrollTo("packages")}
-              className="px-10 py-4 rounded-xl text-base font-semibold tracking-wide uppercase transition-all duration-300 hover:scale-105"
+              className="px-10 py-4 rounded-xl text-base font-semibold tracking-wide uppercase text-white transition-all duration-300 hover:scale-105"
               style={{
                 background: "linear-gradient(135deg, #DC2626, #991B1B)",
                 boxShadow: "0 0 40px rgba(220,38,38,0.3), inset 0 1px 0 rgba(255,255,255,0.1)",

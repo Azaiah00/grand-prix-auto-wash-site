@@ -2,7 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Hero shimmer — your gradient + keyframes; scoped to #root so `text-white` on the shell does not override the fill. */
+/* Match page tone when the viewport overscrolls (vars live on #root). */
+html {
+  background: #f5f5f4;
+}
+
+/* Light “premium garage” theme — surfaces and nav (consumed by GLOBAL_STYLES + layout). */
+#root {
+  --gp-page: #f5f5f4;
+  --gp-text: #0f172a;
+  --gp-text-muted: #64748b;
+  --gp-nav-bg: rgba(255, 255, 255, 0.9);
+  --gp-nav-border: rgba(15, 23, 42, 0.08);
+  --gp-scrollbar-thumb: #94a3b8;
+  --gp-scrollbar-track: #e7e5e4;
+}
+
+/* Hero headline: darker metallic sweep so it reads on a light page. */
 @keyframes shimmer {
   0% {
     background-position: -200% center;
@@ -14,13 +30,23 @@
 
 #root .shimmer-text {
   display: inline-block;
-  background: linear-gradient(90deg, #c0c0c0 0%, #ffffff 25%, #c0c0c0 50%, #ffffff 75%, #c0c0c0 100%);
+  background: linear-gradient(
+    90deg,
+    #64748b 0%,
+    #0f172a 18%,
+    #94a3b8 35%,
+    #1e293b 50%,
+    #94a3b8 65%,
+    #0f172a 82%,
+    #64748b 100%
+  );
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
   animation: shimmer 4s linear infinite;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.6);
 }
 
 @media (prefers-reduced-motion: reduce) {

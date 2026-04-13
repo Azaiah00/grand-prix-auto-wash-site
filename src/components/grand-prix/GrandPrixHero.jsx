@@ -5,19 +5,20 @@ export default function GrandPrixHero({ scrollTo }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0f] via-transparent to-[#0a0a0f] z-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0f]/80 via-transparent to-[#0a0a0f]/80 z-10" />
+        {/* Soft neutral vignettes so the hero feels bright, not “spotlight on black.” */}
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-100/90 via-transparent to-stone-200/70 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-stone-100/70 via-transparent to-stone-100/70 z-10" />
         <div
           className="absolute inset-0 z-0"
           style={{
             background:
-              "radial-gradient(ellipse at 50% 40%, rgba(59,130,246,0.15) 0%, rgba(220,38,38,0.08) 30%, transparent 70%)",
+              "radial-gradient(ellipse at 50% 40%, rgba(59,130,246,0.08) 0%, rgba(220,38,38,0.04) 35%, transparent 72%)",
           }}
         />
         <div
           className="absolute inset-0 z-0"
           style={{
-            background: "radial-gradient(ellipse at 30% 60%, rgba(16,185,129,0.08) 0%, transparent 50%)",
+            background: "radial-gradient(ellipse at 30% 60%, rgba(16,185,129,0.05) 0%, transparent 52%)",
           }}
         />
       </div>
@@ -49,17 +50,17 @@ export default function GrandPrixHero({ scrollTo }) {
           </p>
         </AnimateIn>
 
-        {/* text-transparent on h1: avoids inheriting root text-white into the shimmer span. */}
+        {/* text-transparent on h1: avoids inheriting body color into the shimmer span (see index.css). */}
         <h1 className="racing-font text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95] mb-6 md:mb-8 text-transparent">
           <span className="shimmer-text">Virginia&apos;s Ultimate</span>
           <br />
-          <span className="text-white">24/7 Touch-Free</span>
+          <span className="text-slate-900">24/7 Touch-Free</span>
           <br />
           <span style={{ color: "#DC2626" }}>Auto Spa.</span>
         </h1>
 
         <AnimateIn delay={0.4}>
-          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed font-light px-4">
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed font-light px-4">
             No brushes. No scratches. Just pure, high-pressure perfection.
             <br className="hidden sm:block" />
             Get a showroom shine any time of day or night.
@@ -71,7 +72,7 @@ export default function GrandPrixHero({ scrollTo }) {
             <button
               type="button"
               onClick={() => scrollTo("packages")}
-              className="group px-8 py-4 rounded-xl text-base font-semibold tracking-wide uppercase transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+              className="group px-8 py-4 rounded-xl text-base font-semibold tracking-wide uppercase text-white transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
               style={{
                 background: "linear-gradient(135deg, #DC2626, #991B1B)",
                 boxShadow: "0 0 30px rgba(220,38,38,0.3), inset 0 1px 0 rgba(255,255,255,0.1)",
@@ -83,12 +84,7 @@ export default function GrandPrixHero({ scrollTo }) {
             <button
               type="button"
               onClick={() => scrollTo("locations")}
-              className="px-8 py-4 rounded-xl text-base font-semibold tracking-wide uppercase transition-all duration-300 hover:scale-105"
-              style={{
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.15)",
-                backdropFilter: "blur(10px)",
-              }}
+              className="px-8 py-4 rounded-xl text-base font-semibold tracking-wide uppercase transition-all duration-300 hover:scale-105 text-slate-800 bg-white/85 border border-slate-200 shadow-sm hover:bg-white hover:border-slate-300"
             >
               <span className="flex items-center justify-center gap-2">
                 <MapPin size={18} />
@@ -105,7 +101,7 @@ export default function GrandPrixHero({ scrollTo }) {
             className="mt-12 md:mt-16 mx-auto block animate-bounce"
             aria-label="Scroll to features"
           >
-            <ChevronDown size={28} className="text-gray-500" />
+            <ChevronDown size={28} className="text-slate-500" />
           </button>
         </AnimateIn>
       </div>

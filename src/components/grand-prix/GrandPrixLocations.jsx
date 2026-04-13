@@ -21,7 +21,7 @@ export default function GrandPrixLocations() {
             <p className="uppercase tracking-[0.25em] text-xs font-semibold mb-4" style={{ color: "#DC2626" }}>
               Pit Stops
             </p>
-            <h2 className="racing-font text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
+            <h2 className="racing-font text-slate-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
               Two Mechanicsville Locations <span style={{ color: "#DC2626" }}>to Serve You.</span>
             </h2>
           </div>
@@ -49,22 +49,21 @@ export default function GrandPrixLocations() {
                     </span>
                   </div>
 
-                  <h3 className="racing-font text-2xl md:text-3xl text-white mb-3">{loc.name}</h3>
+                  <h3 className="racing-font text-2xl md:text-3xl text-slate-900 mb-3">{loc.name}</h3>
 
                   <div className="flex items-start gap-2 mb-4">
-                    <MapPin size={16} className="text-gray-500 mt-0.5 flex-shrink-0" aria-hidden />
-                    <p className="text-gray-400 text-sm">{loc.address}</p>
+                    <MapPin size={16} className="text-slate-500 mt-0.5 flex-shrink-0" aria-hidden />
+                    <p className="text-slate-600 text-sm">{loc.address}</p>
                   </div>
 
                   <div
-                    className="w-full h-56 md:h-64 rounded-xl mb-5 overflow-hidden relative"
-                    style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+                    className="w-full h-56 md:h-64 rounded-xl mb-5 overflow-hidden relative border border-slate-200 shadow-inner bg-slate-100"
                   >
                     <iframe
                       title={`Map of Grand Prix Auto Wash — ${loc.name}`}
                       width="100%"
                       height="100%"
-                      style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) brightness(0.95) contrast(0.9)" }}
+                      style={{ border: 0 }}
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                       src={embedSrc(loc.address)}
@@ -77,7 +76,7 @@ export default function GrandPrixLocations() {
                       href={loc.mapUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 py-3 rounded-xl text-sm font-semibold uppercase tracking-wider text-center transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2"
+                      className="flex-1 py-3 rounded-xl text-sm font-semibold uppercase tracking-wider text-center text-white transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2"
                       style={{
                         background: `linear-gradient(135deg, ${loc.color}, ${loc.color}CC)`,
                         boxShadow: `0 0 20px ${loc.color}33`,
@@ -88,11 +87,7 @@ export default function GrandPrixLocations() {
                     </a>
                     <a
                       href={phoneHref}
-                      className="flex-1 py-3 rounded-xl text-sm font-semibold uppercase tracking-wider text-center transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2"
-                      style={{
-                        background: "rgba(255,255,255,0.06)",
-                        border: "1px solid rgba(255,255,255,0.1)",
-                      }}
+                      className="flex-1 py-3 rounded-xl text-sm font-semibold uppercase tracking-wider text-center text-slate-800 bg-white border border-slate-200 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:border-slate-300 flex items-center justify-center gap-2"
                     >
                       <Phone size={16} aria-hidden />
                       {CONTACT_PHONE_DISPLAY}
