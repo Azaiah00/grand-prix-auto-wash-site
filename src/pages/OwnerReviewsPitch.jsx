@@ -173,7 +173,7 @@ export default function OwnerReviewsPitch() {
             <p className="mt-10 text-slate-600">
               Prepared by <strong style={{ color: ACCENT }}>Frederick Sales</strong>
             </p>
-            <p className="text-slate-600">Real Estate Advancement</p>
+            <p className="text-slate-600">Couture House</p>
           </>
         )}
 
@@ -576,16 +576,20 @@ export default function OwnerReviewsPitch() {
               </h1>
               <p className="text-lg text-slate-600">Schedule a kickoff call to begin your transformation</p>
               <p className="mt-8 text-xl font-semibold text-slate-800">Frederick Sales</p>
-              <p className="mt-3 text-lg" style={{ color: ACCENT }}>
-                <a href="mailto:hello@realestateadvancement.com" className="underline-offset-2 hover:underline">
-                  hello@realestateadvancement.com
+              <p className="mt-1 text-lg font-semibold text-slate-800">Azaiah Wood</p>
+              <p className="mt-4 text-lg" style={{ color: ACCENT }}>
+                <a href="mailto:hello@couturehouse.co" className="underline-offset-2 hover:underline">
+                  hello@couturehouse.co
                 </a>
               </p>
-              <p className="mt-3 text-lg" style={{ color: ACCENT }}>
+              <div className="mt-4 flex flex-col items-center gap-2 text-lg" style={{ color: ACCENT }}>
                 <a href="tel:+18048879435" className="underline-offset-2 hover:underline">
                   (804) 887-9435
                 </a>
-              </p>
+                <a href="tel:+18043805490" className="underline-offset-2 hover:underline">
+                  804-380-5490
+                </a>
+              </div>
               <div
                 className="mx-auto mt-12 max-w-xl rounded-xl border border-amber-200 bg-amber-50/80 p-6 italic text-slate-700"
                 style={{ borderLeftWidth: "4px", borderLeftColor: ACCENT }}
@@ -618,7 +622,7 @@ export default function OwnerReviewsPitch() {
       </div>
 
       <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-slate-200 bg-slate-100/90 px-4 py-3 text-xs text-slate-500 sm:px-8 sm:text-sm">
-        <span>Real Estate Advancement · hello@realestateadvancement.com</span>
+        <span>Couture House · hello@couturehouse.co</span>
         <span className="font-semibold" style={{ color: ACCENT }}>
           {current + 1} of {total}
         </span>
