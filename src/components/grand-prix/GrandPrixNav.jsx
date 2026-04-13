@@ -1,4 +1,5 @@
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import GrandPrixLogo from "./GrandPrixLogo.jsx";
 
 const LINKS = [
@@ -36,6 +37,13 @@ export default function GrandPrixNav({ mobileMenuOpen, setMobileMenuOpen, scroll
                 {label}
               </button>
             ))}
+            {/* Temporary: internal deck for owner meeting — remove with /owner-deck route */}
+            <Link
+              to="/owner-deck"
+              className="text-sm font-medium text-amber-700 hover:text-amber-900 transition-colors tracking-wide uppercase"
+            >
+              Owner deck
+            </Link>
             <button
               type="button"
               onClick={() => scrollTo("packages")}
@@ -74,6 +82,13 @@ export default function GrandPrixNav({ mobileMenuOpen, setMobileMenuOpen, scroll
                 {label}
               </button>
             ))}
+            <Link
+              to="/owner-deck"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block w-full py-2 text-lg font-medium uppercase tracking-wide text-amber-800"
+            >
+              Owner deck
+            </Link>
             <button
               type="button"
               onClick={() => scrollTo("packages")}

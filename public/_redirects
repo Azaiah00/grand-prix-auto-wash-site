@@ -1,0 +1,2 @@
+# SPA fallback so /owner-deck loads on Netlify refresh
+/*    /index.html   200
